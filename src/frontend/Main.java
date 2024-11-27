@@ -274,7 +274,15 @@ public class Main extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code here:
-    // select shap
+    // select shape
+    int index = jComboBox1.getSelectedIndex();
+    if(index > 0){
+        drawingCanvas1.setHighlightedShape(drawingCanvas1.getShapes().get(index - 1));
+    }
+    else
+    {
+        drawingCanvas1.setHighlightedShape(null);
+    }
 }                                                                                    
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
