@@ -148,11 +148,9 @@ public class AddLine extends javax.swing.JFrame {
         if(Validation.validatePosition(start , drawingCanvas) && Validation.validatePosition(end, drawingCanvas)){
 
             String[] startPos = start.split(",");
-            String[] endPos = end.split(",");
 
             Point startPoint = new Point(Integer.parseInt(startPos[0]), Integer.parseInt(startPos[1]));
-            Point endPoint = new Point(Integer.parseInt(endPos[0]), Integer.parseInt(endPos[1]));
-            LineSegment line = new LineSegment(startPoint ,endPoint);
+            LineSegment line = new LineSegment(startPoint ,end);
 
             drawingCanvas.addShape(line);
             line.draw(drawingCanvas.getGraphics());

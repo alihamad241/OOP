@@ -76,7 +76,7 @@ public class Load {
     }
 
     private static LineSegment getLineSegment(String[] values) {
-        LineSegment line = new LineSegment(new Point(Integer.parseInt(values[0]), Integer.parseInt(values[1])), new Point(Integer.parseInt(values[2]), Integer.parseInt(values[3])));
+        LineSegment line = new LineSegment(new Point(Integer.parseInt(values[0]), Integer.parseInt(values[1])), values[2] + "," + values[3]);
         line.setColor(new Color(Integer.parseInt(values[4]), Integer.parseInt(values[5]), Integer.parseInt(values[6])));
         if (!values[7].equals("null")) {
             line.setFillColor(new Color(Integer.parseInt(values[7]), Integer.parseInt(values[8]), Integer.parseInt(values[9])));

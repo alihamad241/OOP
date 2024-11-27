@@ -5,28 +5,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LineSegment extends Shapes {
-
-    private Point endPosition;
-    
-
-
-    public LineSegment(Point position, Point endPosition) {
+    public LineSegment(Point position, String endPosition) {
         super(position);
-        this.endPosition = endPosition;
+        this.properties.put("EndX", Double.parseDouble(endPosition.split(",")[0]));
+        this.properties.put("EndY", Double.parseDouble(endPosition.split(",")[1]));
     }
 
     public void setEndPosition(Point position) {
-        this.endPosition = position;
+        this.properties.put("EndX", position.getX());
+        this.properties.put("EndY", position.getY());
     }
 
     public Point getEndPosition() {
-        return this.endPosition;
+        return new Point(this.properties.get("EndX").intValue(), this.properties.get("EndY").intValue());
     }
 
 
-    @Override
-    public void draw(Graphics canvas) {
-        canvas.setColor(this.color);
-        canvas.drawLine((int) this.position.getX(), (int) this.position.getY(), (int) this.endPosition.getX(), (int) this.endPosition.getY());
-    }
+   @Override
+public void draw(Graphics canvas) {
+    canvas.setColor(this.color);
+    canvas.drawLine((int) this.position.getX(), (int) this.position.getY(), this.getProperties().get("EndX").intValue(), this.getProperties().get("EndY").intValue());
+}
 }
