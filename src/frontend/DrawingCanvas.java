@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class DrawingCanvas extends javax.swing.JPanel implements DrawingEngine {
 
     ArrayList<Shape> shapes = new ArrayList<>();
+    Shape highlightedShape;
 
     /**
      * Creates new form Canvas
@@ -74,10 +75,21 @@ public class DrawingCanvas extends javax.swing.JPanel implements DrawingEngine {
         return shapes;
     }
 
+    public void setHighlightedShape(Shape shape) {
+        this.highlightedShape = shape;
+        repaint();
+    }
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         refresh(g);
+        if (highlightedShape != null) {
+            Graphics2D g2d = (Graphics2D) g;
+            g2d.setColor(Color.RED);
+            g2d.setStroke(new BasicStroke(3));
+            highlightedShape.draw(g2d);
+        }
     }
 
 
