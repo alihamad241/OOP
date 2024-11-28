@@ -40,7 +40,7 @@ public class Load {
             throw new RuntimeException(e);
         }
 
-
+        // Read the file line by line and create shapes
         while (sc.hasNextLine()) {
             String input = sc.nextLine();
             String[] parts = input.split(" ");
@@ -77,6 +77,7 @@ public class Load {
         }
     }
 
+    // Helper methods to create shapes
     private static Rectangle getRectangle(String[] values, int id) {
         Rectangle rectangle = new Rectangle(new Point(Integer.parseInt(values[0]), Integer.parseInt(values[1])), Double.parseDouble(values[2]), Double.parseDouble(values[3]), id);
         rectangle.setColor(new Color(Integer.parseInt(values[4]), Integer.parseInt(values[5]), Integer.parseInt(values[6])));

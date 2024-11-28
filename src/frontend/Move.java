@@ -18,6 +18,7 @@ public class Move extends Component {
     }
 
     public void move() {
+        // Get the new position from the user
         String position = JOptionPane.showInputDialog(null, "Enter the new position(separated by commas)");
             if (!Validation.validatePosition(position, drawingCanvas1)) {
                 return;
@@ -28,7 +29,7 @@ public class Move extends Component {
         int y = newPosition.y - shape.getPosition().y;
         shape.setPosition(newPosition);
         if(shape.getClass().getSimpleName().equals("LineSegment")){
-            Point end = new Point(((LineSegment)shape).getEndPosition().x + x, ((LineSegment)shape).getEndPosition().y + y);
+            Point end = new Point((shape.getProperties().get("EndX").intValue() + x), (shape.getProperties().get("EndY").intValue() + y));
             ((LineSegment)shape).setEndPosition(end);
         }
         drawingCanvas1.refresh(drawingCanvas1.getGraphics());
