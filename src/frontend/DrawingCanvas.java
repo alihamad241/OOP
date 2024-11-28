@@ -85,10 +85,8 @@ public class DrawingCanvas extends javax.swing.JPanel implements DrawingEngine {
         super.paintComponent(g);
         refresh(g);
         if (highlightedShape != null) {
-            Graphics2D g2d = (Graphics2D) g;
-            g2d.setColor(Color.RED);
-            g2d.setStroke(new BasicStroke(3));
-            highlightedShape.draw(g2d);
+            ((Graphics2D) g).setStroke(new BasicStroke(3));
+            highlightedShape.draw(g);
         }
     }
 
