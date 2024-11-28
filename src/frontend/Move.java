@@ -19,7 +19,10 @@ public class Move extends Component {
 
     public void move() {
         // Get the new position from the user
-        String position = JOptionPane.showInputDialog(null, "Enter the new position(separated by commas)");
+        String position = JOptionPane.showInputDialog(null, "Enter the new position(separated by commas)", "Move Shapes", JOptionPane.PLAIN_MESSAGE);
+        if(position == null){
+            return;
+        }
             if (!Validation.validatePosition(position, drawingCanvas1)) {
                 return;
             }

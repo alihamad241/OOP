@@ -322,7 +322,10 @@ public class Main extends javax.swing.JFrame {
 
         if(index > 0){
             Shape shape = drawingCanvas1.getShapes().get(index - 1);
-            String newSize = JOptionPane.showInputDialog(this, "Enter the new size(separated by commas for the rectangle and line)");
+            String newSize = JOptionPane.showInputDialog(this, "Enter the new size(separated by commas for the rectangle and line)", "Resize Shapes", JOptionPane.PLAIN_MESSAGE);
+            if(newSize == null){
+                return;
+            }
             String[] sizes = newSize.split(",");
             for (String size : sizes) {
                 if (!Validation.validateNumber(size)) {
