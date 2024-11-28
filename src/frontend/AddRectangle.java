@@ -154,7 +154,7 @@ public class AddRectangle extends javax.swing.JFrame {
             double y = Double.parseDouble(pos[1]);
 
             // Call the DrawingEngine to add the rectangle
-            Rectangle rectangle = new Rectangle(new Point((int)x, (int)y), Double.parseDouble(length), Double.parseDouble(width));
+            Rectangle rectangle = new Rectangle(new Point((int)x, (int)y), Double.parseDouble(length), Double.parseDouble(width), counter);
 
 
             drawingCanvas.addShape(rectangle);

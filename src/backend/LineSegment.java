@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LineSegment extends Shapes {
-    public LineSegment(Point position, String endPosition) {
-        super(position);
+    public LineSegment(Point position, String endPosition, int id) {
+        super(position, id);
         this.properties.put("EndX", Double.parseDouble(endPosition.split(",")[0]));
         this.properties.put("EndY", Double.parseDouble(endPosition.split(",")[1]));
     }

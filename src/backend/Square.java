@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class Square extends Shapes{
 
-    public Square(Point point, double side) {
-        super(point);
+    public Square(Point point, double side, int id) {
+        super(point, id);
         this.properties.put("side", side);
     }
 

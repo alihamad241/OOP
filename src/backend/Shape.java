@@ -14,4 +14,5 @@ public interface Shape {
     public void setFillColor(Color color);
     public Color getFillColor();
     public void draw(Graphics canvas);
+    public int getId();
 }

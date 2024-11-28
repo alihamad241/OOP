@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class Circle extends Shapes {
 
-    public Circle(Point position, double radius) {
-        super(position);
+    public Circle(Point position, double radius, int id) {
+        super(position, id);
         this.properties.put("radius", radius);
     }
 

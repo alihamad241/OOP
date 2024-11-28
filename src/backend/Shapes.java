@@ -9,8 +9,10 @@ public abstract class Shapes implements Shape {
     protected Map<String, Double> properties;
     protected Color color;
     protected Color fillColor;
+    protected int id;
 
-    public Shapes(Point position) {
+    public Shapes(Point position, int id) {
+        this.id = id;
         this.position = position;
         this.properties = new HashMap<>();
         this.color = Color.BLACK;
@@ -67,5 +69,11 @@ public abstract class Shapes implements Shape {
 
     @Override
     public abstract void draw(Graphics canvas);
+
+    @Override
+    public int getId()
+    {
+        return this.id;
+    }
 
 }

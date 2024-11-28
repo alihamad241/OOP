@@ -150,7 +150,7 @@ public class AddLine extends javax.swing.JFrame {
             String[] startPos = start.split(",");
 
             Point startPoint = new Point(Integer.parseInt(startPos[0]), Integer.parseInt(startPos[1]));
-            LineSegment line = new LineSegment(startPoint ,end);
+            LineSegment line = new LineSegment(startPoint ,end, counter);
 
             drawingCanvas.addShape(line);
             line.draw(drawingCanvas.getGraphics());

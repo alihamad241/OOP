@@ -133,7 +133,7 @@ public class AddSquare extends javax.swing.JFrame {
             String [] pos = position.split(",");
             Point p = new Point(Integer.parseInt(pos[0]), Integer.parseInt(pos[1]));
 
-            Square square = new Square(p, Double.parseDouble(side));
+            Square square = new Square(p, Double.parseDouble(side), counter);
 
             drawingCanvas.addShape(square);
             square.draw(drawingCanvas.getGraphics());

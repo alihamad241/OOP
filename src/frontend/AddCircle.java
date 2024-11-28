@@ -138,7 +138,7 @@ public class AddCircle extends javax.swing.JFrame {
 
         if(Validation.validatePosition(position, drawingCanvas) && Validation.validateNumber(radius)){
             String [] pos = position.split(",");
-            Circle circle = new Circle(new Point(Integer.parseInt(pos[0]), Integer.parseInt(pos[1])), Double.parseDouble(radius));
+            Circle circle = new Circle(new Point(Integer.parseInt(pos[0]), Integer.parseInt(pos[1])), Double.parseDouble(radius),counter);
             drawingCanvas.addShape(circle);
             circle.draw(drawingCanvas.getGraphics());
             jComboBox1.addItem("Circle" + counter++);

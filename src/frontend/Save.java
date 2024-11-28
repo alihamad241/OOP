@@ -35,6 +35,7 @@ public class Save {
 
     private String getShapeData(Shape shape) {
         StringBuilder sb = new StringBuilder();
+        sb.append(shape.getId()).append(",");
         sb.append(shape.getClass().getSimpleName()).append(" ");
         sb.append(shape.getPosition().x).append(",").append(shape.getPosition().y);
 
