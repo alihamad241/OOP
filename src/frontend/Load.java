@@ -26,6 +26,7 @@ public class Load {
     public void load() {
         // Clear the canvas and the combo box
         drawingCanvas1.getGraphics().clearRect(0, 0, drawingCanvas1.getWidth(), drawingCanvas1.getHeight());
+        drawingCanvas1.getShapes().clear();
         jComboBox1.removeAllItems();
         jComboBox1.addItem("none");
         // Reset the counter
