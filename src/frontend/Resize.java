@@ -5,6 +5,7 @@ import backend.LineSegment;
 import backend.Shape;
 import backend.Validation;
 
+import javax.swing.*;
 import java.util.Map;
 
 public class Resize {
@@ -25,14 +26,14 @@ public class Resize {
                 if (size.length == 1)
                 this.shape.setProperties(Map.of("radius", Double.parseDouble(size[0])));
                 else {
-                    System.out.println("Invalid number of arguments for resizing a Circle.");
+                    JOptionPane.showMessageDialog(null, "Invalid number of arguments for resizing a Circle.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
             case "Square" -> {
                 if (size.length == 1)
                 this.shape.setProperties(Map.of("side", Double.parseDouble(size[0])));
                 else {
-                    System.out.println("Invalid number of arguments for resizing a Square.");
+                    JOptionPane.showMessageDialog(null, "Invalid number of arguments for resizing a Square.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
             case "Rectangle" -> {
@@ -43,7 +44,7 @@ public class Resize {
                     ));
                 }
                 else {
-                    System.out.println("Invalid number of arguments for resizing a Rectangle.");
+                    JOptionPane.showMessageDialog(null, "Invalid number of arguments for resizing a Rectangle.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
             case "LineSegment" -> {
@@ -55,7 +56,7 @@ public class Resize {
                     }
                 }
                 else {
-                    System.out.println("Invalid number of arguments for resizing a LineSegment.");
+                    JOptionPane.showMessageDialog(null, "Invalid number of arguments for resizing a Line Segment.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
